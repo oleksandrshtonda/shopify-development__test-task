@@ -37,32 +37,6 @@
   </div>
 
   <script>
-    let productIdsInCart;
-
-    const getAllProducts = () => {
-      const COLLECTION_ID = '613242569029';
-      const TOKEN = '7e80fa92cd23adb9b62073a4900cdd00';
-      const SHOP_NAME = '40a5e6-4';
-
-      const url = `https://${SHOP_NAME}.myshopify.com/admin/api/2021-04/products.json?collection_id=${COLLECTION_ID}`;
-
-      fetch(url, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Shopify-Access-Token': TOKEN,
-        },
-      })
-        .then(response => response.json())
-        .then(data => {
-          const products = data.products;
-          console.log(products);
-        })
-        .catch(error => console.error('Error:', error));
-    }
-
-    getAllProducts()
-
     document.addEventListener('DOMContentLoaded', function() {
       const addToCartForms = document.querySelectorAll('.product-form');
 
@@ -83,42 +57,6 @@
           });
         });
       });
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const updateProductsBtns = document.querySelectorAll('.product__add-to-cart-btn');
-      const productsElem = document.querySelector('.products');
-
-      const updateMarkupForProducts = productsIds => {
-
-      }
-
-      const callback = () => {
-        fetch('cart.js')
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.json()
-          })
-          .then(data => {
-            productsElem.innerHTML = data;
-            
-            productIdsInCart = data.items.map(product => product.id)
-
-            console.log(data)
-            console.log(productIdsInCart)
-          })
-          .catch(error => {
-            console.error('error:', error);
-          });
-      }
-
-      updateProductsBtns.forEach(updateProductsBtn => {
-        updateProductsBtn.addEventListener('click', () => {
-          setTimeout(callback, 200);
-        });
-      })
     });
   </script>
 
