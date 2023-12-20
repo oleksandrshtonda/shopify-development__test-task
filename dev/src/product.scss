@@ -1,0 +1,68 @@
+@import 'fonts';
+@import 'colors';
+
+.product {
+  max-width: 443px;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 16px 0;
+    gap: 20px;
+
+    form {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    color: $product-title;
+    font-family: Inter;
+    font-size: 20px; 
+    font-weight: 500;
+    line-height: 26px;
+  }
+
+  &__add-to-cart-btn {
+    width: 100%;
+    padding: 20px 35px;
+
+    border: none;
+    border-radius: 40px;
+    background-color: $product-btn-color;
+
+    color: $product-btn-label-color;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $product-btn-color--hover;
+    }
+  }
+}
+
+@media (min-width: 986px) {
+  .product {
+    &__info {
+      margin: 50px 0px 0;
+      gap: 30px;
+    }
+
+    &__title {
+      font-size: 26px;
+    }
+
+    &__add-to-cart-btn {
+      font-size: 16px;
+    }
+  }
+}
