@@ -23,7 +23,7 @@
               {{ product.title }}
             </h2>
 
-            {% form 'product', product %}
+            {% form 'product', product, class: 'product-form' %}
               <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
               <button class="product__add-to-cart-btn" type="submit">
@@ -35,5 +35,31 @@
       {% endunless %}
     {% endfor %}
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const addToCartForms = document.querySelectorAll('.product-form');
+
+      addToCartForms.forEach(function(form) {
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          const formData = new FormData(form);
+
+          fetch(form.action, {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Товар доданий у кошик:', data);
+          })
+          .catch(error => {
+            console.error('Помилка при додаванні товару у кошик:', error);
+          });
+        });
+      });
+    });
+  </script>
+
 </section>
 
