@@ -7,9 +7,12 @@
 
   <div class="featured-products__products products">
     {% for product in products %}
-      <div class="products__product">
-        <h2>{{ product.title }}</h2>
-        <p>{{ product.description }}</p>
+      <div class="products__product product">
+        <p class="product__title">{{ product.title }}</p>
+
+        <button class="product__add-to-cart-btn">
+          Add to cart - ${{ product.price }}
+        </button>
       </div>
     {% endfor %}
   </div>
