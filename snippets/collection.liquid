@@ -73,6 +73,7 @@
             }
             return response.text();
           })
+          .then(data => data.json())
           .then(data => {
             productsElem.innerHTML = data;
             
