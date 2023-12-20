@@ -18,10 +18,12 @@
           <h2 class="product__title">
             {{ product.title }}
           </h2>
-  
-          <button class="product__add-to-cart-btn" onclick="() => {console.log({{ product }})}">
-            Add to cart - {{ product.price | money_without_trailing_zeros }}
-          </button>
+
+          {% form 'product', product %}
+            <button class="product__add-to-cart-btn" type="submit">
+              Add to cart - {{ product.price | money_without_trailing_zeros }}
+            </button>
+          {% endform %}
         </div>
       </article>
     {% endfor %}

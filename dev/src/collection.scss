@@ -41,6 +41,10 @@
       align-items: center;
       margin: 30px 16px 0;
       gap: 20px;
+
+      form {
+        width: 100%;
+      }
     }
 
     &__title {
