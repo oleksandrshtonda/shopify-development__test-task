@@ -19,7 +19,7 @@
             {{ product.title }}
           </h2>
   
-          <button class="product__add-to-cart-btn">
+          <button class="product__add-to-cart-btn" onclick="() => {console.log({{ product }})}">
             Add to cart - {{ product.price | money_without_trailing_zeros }}
           </button>
         </div>
