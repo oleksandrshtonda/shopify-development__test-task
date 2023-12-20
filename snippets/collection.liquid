@@ -5,13 +5,13 @@
     Featured Products
   </h1>
 
-  <ul class="products">
+  <div class="featured-products__products products">
     {% for product in products %}
-      <li>
+      <div class="products__product">
         <h2>{{ product.title }}</h2>
         <p>{{ product.description }}</p>
-      </li>
+      </div>
     {% endfor %}
-  </ul>
+  </div>
 </div>
 
