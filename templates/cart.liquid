@@ -22,11 +22,10 @@
               {{ item.title }} | quantity: {{ item.quantity }}
             </h2>
 
-            <a class="product__remove-from-cart-btn" href="{{ item.url_to_remove }}">
+            {% comment %} <a class="product__remove-from-cart-btn" href="{{ item.url_to_remove }}">
               Remove
-            </a>
-
-            {{ item.url_to_remove }}
+            </a> {% endcomment %}
+            <a class="product__remove-from-cart-btn" href="/cart/change?line={{ forloop.index }}&quantity=0" rel="{{ item.id }}">Remove</a>
           </div>
         </article>
       {% endfor %}
