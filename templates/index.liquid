@@ -2,4 +2,8 @@
   {{- collection.title | link_to: collection.url }}
 {% endfor %}
 
+{% for product in collections['customize-collection'].products %}
+  <p>{{ product.title }}</p>
+{% endfor %}
+
 <!-- {% include 'collection' with products: collections.all.products %} -->
