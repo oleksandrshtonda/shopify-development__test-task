@@ -11,7 +11,7 @@
   <div class="featured-products__products products">
     {% for product in products reverse %}
       {{ cart_item_ids }}
-      {% unless cart_product_ids contains product.id %}
+      {% unless cart_product_ids contains product.selected_or_first_available_variant.id %}
         <article class="products__product product">
           <img
             class="product__image"
