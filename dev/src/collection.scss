@@ -1,3 +1,5 @@
+@import 'fonts';
+
 .featured-products {
   &__label {
     color: #367488;
@@ -5,5 +7,6 @@
     font-size: 48px;
     font-weight: 800;
     line-height: 87.5%;
+    font-family: Inter;
   }
 }
