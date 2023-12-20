@@ -64,7 +64,7 @@
 
     updateProductsBtns.forEach(updateProductsBtn => {
       updateProductsBtn.addEventListener('click', () => {
-      fetch('/your-endpoint-for-updating-products')
+      fetch('cart.js')
         .then(response => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
