@@ -2,11 +2,15 @@
 @import 'colors';
 
 .cart__product {
-  margin-left: 20px;
+  margin: 0 auto;
 }
 
 .product {
   max-width: 443px;
+
+  * {
+    box-sizing: border-box;
+  }
 
   &__image {
     width: 100%;
@@ -52,6 +56,7 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 26px;
+    text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 
@@ -62,14 +67,11 @@
 
   &__remove-from-cart-btn {
     margin-bottom: 30px;
+    text-decoration: none;
   }
 }
 
 @media (min-width: 986px) {
-  .cart__product {
-    margin-left: 0px;
-  }
-
   .product {
     &__info {
       margin: 50px 0px 0;
