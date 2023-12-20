@@ -13,7 +13,7 @@
         <p class="product__title">{{ product.title }}</p>
 
         <button class="product__add-to-cart-btn">
-          Add to cart - ${{ product.price }}
+          Add to cart - {{ product.price | money }}
         </button>
       </div>
     {% endfor %}
