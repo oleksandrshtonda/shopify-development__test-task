@@ -2,6 +2,8 @@
 @import 'colors';
 
 .featured-products {
+  margin-bottom: 69px;
+
   * {
     box-sizing: border-box;
   }
@@ -13,7 +15,13 @@
     font-weight: 800;
     line-height: 42px;
     font-family: Inter;
-    margin-bottom: 30px;
+    margin: 40px 0 30px;
+  }
+
+  &__products {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
 }
 
