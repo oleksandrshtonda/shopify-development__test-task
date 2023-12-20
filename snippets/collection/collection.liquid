@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="collection.scss">
+
+<div class="featured-products">
+  <h1 class="featured-products__label">
+    Featured Products
+  </h1>
+
+  <ul class="products">
+    {% for product in products %}
+      <li>
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
