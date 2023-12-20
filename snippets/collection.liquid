@@ -9,8 +9,7 @@
   {% assign cart_item_ids = cart.items | map: 'product_id' %}
 
   <div class="featured-products__products products">
-    {% for product in products reverse %}
-      {{ cart_item_ids }}
+    {% for product in products %}
       {% unless cart_item_ids contains product.id %}
         <article class="products__product product">
           <img
