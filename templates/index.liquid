@@ -2,7 +2,7 @@
   {{- collection.title | link_to: collection.url }}
 {% endfor %}
 
-{% for product in collections['customize-collection'].products %}
+{% for product in collections['featured-products'].products %}
   <p>{{ product.title }}</p>
 {% endfor %}
 
