@@ -8,13 +8,21 @@
   <div class="featured-products__products products">
     {% for product in products %}
       <div class="products__product product">
-        <img src="{{ product.featured_image | image_url }}" alt="{{ product.featured_image.alt | escape }}">
+        <img
+          class="product__image"
+          src="{{ product.featured_image | image_url }}"
+          alt="{{ product.featured_image.alt | escape }}"
+        >
 
-        <p class="product__title">{{ product.title }}</p>
-
-        <button class="product__add-to-cart-btn">
-          Add to cart - {{ product.price | money }}
-        </button>
+        <div class="product__info">
+          <p class="product__title">
+            {{ product.title }}
+          </p>
+  
+          <button class="product__add-to-cart-btn">
+            Add to cart - {{ product.price | money_without_trailing_zeros }}
+          </button>
+        </div>
       </div>
     {% endfor %}
   </div>

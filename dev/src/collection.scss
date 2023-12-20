@@ -18,10 +18,14 @@
 }
 
 .products {
-  .product {
+  .product, .product__info {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &__info {
+      margin: 0 16px;
+    }
 
     &__title {
       color: $product-title;
@@ -32,10 +36,13 @@
     }
 
     &__add-to-cart-btn {
-      background-color: $product-btn-color;
+      width: 100%;
+      margin: 0 16px;
+      padding: 20px 35px;
+
       border: none;
       border-radius: 40px;
-      padding: 20px 35px;
+      background-color: $product-btn-color;
 
       color: $product-btn-label-color;
       font-family: Inter;
