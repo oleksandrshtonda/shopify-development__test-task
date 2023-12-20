@@ -1,13 +1,13 @@
 {{ 'collection.css' | asset_url | stylesheet_tag }}
 
-<div class="featured-products">
+<section class="featured-products">
   <h1 class="featured-products__label">
     Featured Products
   </h1>
 
   <div class="featured-products__products products">
     {% for product in products reverse %}
-      <div class="products__product product">
+      <article class="products__product product">
         <img
           class="product__image"
           src="{{ product.featured_image | image_url }}"
@@ -15,16 +15,16 @@
         >
 
         <div class="product__info">
-          <p class="product__title">
+          <h2 class="product__title">
             {{ product.title }}
-          </p>
+          </h2>
   
           <button class="product__add-to-cart-btn">
             Add to cart - {{ product.price | money_without_trailing_zeros }}
           </button>
         </div>
-      </div>
+      </article>
     {% endfor %}
   </div>
-</div>
+</section>
 
