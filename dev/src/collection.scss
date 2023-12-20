@@ -19,9 +19,9 @@
   }
 
   &__products {
-    display: flex;
-    flex-direction: column;
     gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -63,11 +63,28 @@
       font-size: 14px;
       font-weight: 400;
       line-height: 26px;
+      cursor: pointer;
       transition: background-color 0.3s ease-in-out;
 
       &:hover {
         background-color: $product-btn-color--hover;
       }
+    }
+  }
+}
+
+@media (min-width: 986px) {
+  .featured-products {
+    margin-bottom: 139px;
+
+    &__label {
+      font-size: 48px;
+    }
+
+    &__products {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 100px;
+      row-gap: 89px;
     }
   }
 }
