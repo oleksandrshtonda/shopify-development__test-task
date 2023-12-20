@@ -39,6 +39,30 @@
   <script>
     let productIdsInCart;
 
+    const getAllProducts = () => {
+      const COLLECTION_ID = '613242569029';
+      const TOKEN = '6cb45da0e17f79006b1c289f35348e1f';
+      const SHOP_NAME = '40a5e6-4';
+
+      const url = `https://${SHOP_NAME}.myshopify.com/admin/api/2021-04/products.json?collection_id=${COLLECTION_ID}`;
+
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Shopify-Access-Token': TOKEN,
+        },
+      })
+        .then(response => response.json())
+        .then(data => {
+          const products = data.products;
+          console.log(products);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    getAllProducts()
+
     document.addEventListener('DOMContentLoaded', function() {
       const addToCartForms = document.querySelectorAll('.product-form');
 
@@ -64,6 +88,10 @@
     document.addEventListener('DOMContentLoaded', () => {
       const updateProductsBtns = document.querySelectorAll('.product__add-to-cart-btn');
       const productsElem = document.querySelector('.products');
+
+      const updateMarkupForProducts = productsIds => {
+
+      }
 
       const callback = () => {
         fetch('cart.js')
