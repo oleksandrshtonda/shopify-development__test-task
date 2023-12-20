@@ -1,5 +1,21 @@
 @import 'colors';
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 50px;
+  align-items: center;
+
+  a {
+    color: $products-label;
+    font-size: 24px;
+    text-decoration: none;
+    font-family: Inter;
+    font-weight: 500;
+  }
+}
+
 .cart {
   text-align: center;
 

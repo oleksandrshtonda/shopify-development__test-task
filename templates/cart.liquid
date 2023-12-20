@@ -3,6 +3,12 @@
 
 {% form 'cart', cart %}
   <section class="cart">
+    <header class="header">
+      <a href="/">Refactor</a>
+
+      <a href="/cart">Cart</a>
+    </header>
+
     <h1 class="cart__label">Your cart</h1>
     
     {% if cart.empty? %}
