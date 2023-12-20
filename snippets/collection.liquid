@@ -8,6 +8,8 @@
   <div class="featured-products__products products">
     {% for product in products %}
       <div class="products__product product">
+        <img src="{{ product.featured_image.src }}" alt="{{ product.featured_image.alt | escape }}">
+
         <p class="product__title">{{ product.title }}</p>
 
         <button class="product__add-to-cart-btn">
