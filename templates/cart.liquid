@@ -22,10 +22,8 @@
               {{ item.title }} | quantity: {{ item.quantity }}
             </h2>
 
-            {% comment %} <a class="product__remove-from-cart-btn" href="{{ item.url_to_remove }}">
-              Remove
-            </a> {% endcomment %}
-            <a class="product__remove-from-cart-btn" href="/cart/change?line={{ forloop.index }}&quantity=0" rel="{{ item.id }}">Remove</a>
+            {% comment %} <a class="product__remove-from-cart-btn" href="/cart/change?line={{ forloop.index }}&quantity=0" rel="{{ item.id }}">Remove</a> {% endcomment %}
+            {% comment %} The tag <a></a> below should delete a product from the cart, but it deletes all products from the cart :( {% endcomment %}
           </div>
         </article>
       {% endfor %}
