@@ -37,6 +37,8 @@
   </div>
 
   <script>
+    let productIdsInCart;
+
     document.addEventListener('DOMContentLoaded', function() {
       const addToCartForms = document.querySelectorAll('.product-form');
 
@@ -60,33 +62,36 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-    const updateProductsBtns = document.querySelectorAll('.product__add-to-cart-btn');
-    const productsElem = document.querySelector('.products');
+      const updateProductsBtns = document.querySelectorAll('.product__add-to-cart-btn');
+      const productsElem = document.querySelector('.products');
 
-    const callback = () => {
-      fetch('cart.js')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.text();
-        })
-        .then(data => {
-          productsElem.innerHTML = data;
-          
-          console.log(data)
-        })
-        .catch(error => {
-          console.error('error:', error);
+      const callback = () => {
+        fetch('cart.js')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.text();
+          })
+          .then(data => {
+            productsElem.innerHTML = data;
+            
+            productIdsInCart = data.items.map(product => product.id)
+
+            console.log(data)
+            console.log(productIdsInCart)
+          })
+          .catch(error => {
+            console.error('error:', error);
+          });
+      }
+
+      updateProductsBtns.forEach(updateProductsBtn => {
+        updateProductsBtn.addEventListener('click', () => {
+          setTimeout(callback, 200);
         });
-    }
-
-    updateProductsBtns.forEach(updateProductsBtn => {
-      updateProductsBtn.addEventListener('click', () => {
-        setTimeout(callback, 200);
-      });
-    })
-  });
+      })
+    });
   </script>
 
 </section>
